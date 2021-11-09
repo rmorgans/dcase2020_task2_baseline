@@ -28,11 +28,11 @@ import yaml
 # setup STD I/O
 ########################################################################
 """
-Standard output is logged in "baseline.log".
+Standard output is logged in "STDOUT.log".
 """
 import logging
 
-logging.basicConfig(level=logging.DEBUG, filename="baseline.log")
+logging.basicConfig(level=logging.DEBUG, filename="STDOUT.log")
 logger = logging.getLogger(' ')
 handler = logging.StreamHandler()
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
@@ -80,7 +80,7 @@ def command_line_chk():
 # load parameter.yaml
 ########################################################################
 def yaml_load():
-    with open("baseline.yaml") as stream:
+    with open("config.yaml") as stream:
         param = yaml.safe_load(stream)
     return param
 
